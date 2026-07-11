@@ -279,5 +279,14 @@ The generated report includes:
 
 ---
 # Screenshots
+! [Screenshot](Screenshot1.png)
+! [Screenshot](Screenshot2.png)
+
+---
+
+# conclusion
+I am really very greatful to nishchit.in for giving me the opportunity to learn and work on this project. Through this project, i had successfully learned about web scraping, web crawling, SERP API, and LLM summarization.
+
+---
 
 
