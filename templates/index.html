@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Startup intelligence scrapper </title>
+        
+        <!-- CSS-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+        
+    </head>
+    <body>
+        <nav class="navbar">
+
+            <!-- Logo-->
+             <div class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Logo" class="logo">
+
+             </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/scraper">Scraper</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header    -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Welcome to Startup Intelligence Scraper</h1>
+                <p>Discover valuable insights about startups with our powerful scraping tool.</p>
+                
+            </div>
+            
+        </header>
+
+        <!-- container -->
+        <main class="main"> 
+
+        <!-- Main Content -->
+
+        <div class="main-content">
+            <section class="features">
+                <div class="feature">
+                    
+                    <h3>Comprehensive Data</h3>
+                    <p>Access a wide range of startup data, including funding rounds, team members, and more.</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- another container-->
+         <div class="contain1">
+        <!-- Scraper Section -->
+         <div class="scraper-section">
+            <h2>Scraper</h2>
+            <p>Use our scraper to gather valuable insights about startups.</p>
+            <a href="/scraper" class="btn">Start Scraping</a>
+        </div>
+
+        <!-- Scraper input section -->
+        <div class="scraper-input-section">
+            <h2>Scraper Input</h2>
+            <p>Enter the URL of the startup you want to scrape.</p>
+            <form action="/scraper" method="POST">
+
+    <input
+        type="text"
+        name="query"
+        placeholder="AI Healthcare India"
+        required>
+
+    <button type="submit">
+
+        Search
+
+    </button>
+
+</form>
+        </div>
+
+        <!-- Scraper output section-->
+        <div class="scraper-output-section">
+            <h2>Scraper Output</h2>
+            <form action="/scraper" method="GET">
+                {% if startups %}
+
+                {% for startup in startups %}
+
+                <div class="info-grid">
+
+<div class="info-item">
+<b>🏢 Startup name </b><br>
+{{startup.startup_name}}
+</div>
+
+<div class="info-item">
+<b>🌐 Website</b><br>
+<a href="{{startup.website}}" target="_blank">
+{{startup.website}}
+</a>
+</div>
+
+<div class="info-item">
+<b>💰 Funding Stage</b><br>
+{{startup.funding_stage}}
+</div>
+
+<div class="info-item">
+<b>📧 Email</b><br>
+{{startup.email}}
+</div>
+
+<div class="info-item">
+<b>📞 Phone</b><br>
+{{startup.phone}}
+</div>
+
+<div class="info-item">
+<b>💼 LinkedIn</b><br>
+<a href="{{startup.linkedin}}" target="_blank">
+{{startup.linkedin}}
+</a>
+</div>
+
+<div class="info-item">
+<b>🐦 Twitter</b><br>
+<a href="{{startup.twitter}}" target="_blank">
+{{startup.twitter}}
+</a>
+</div>
+
+<div class="info-item">
+<b>💼 Careers</b><br>
+{{startup.careers_page}}
+</div>
+
+</div>
+
+<div class="summary-box">
+
+<h3>🤖 AI Summary</h3>
+
+<p>{{startup.summary}}</p>
+
+</div>
+
+                {% endfor %}
+
+                {% endif %}
+            
+                
+            </form>
+        </div> 
+        </div>
+        </main>
+        <!-- Footer    -->
+        <footer class="footer">
+            <p>&copy; 2024 Startup Intelligence Scraper. All rights reserved.</p>
+            <p> About the Author:  Mehakpreet Kaur  
+                <a href="https://www.linkedin.com/in/mehakpreet-kaur-2b0a4b1b3/" target="_blank">LinkedIn</a> |
+            </p>
+            
+        </footer> 
+
+        <!-- JavaScript Section -->
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
