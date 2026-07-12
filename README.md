@@ -279,8 +279,13 @@ The generated report includes:
 
 ---
 # Screenshots
-! [Screenshot](Screenshot1.png)
-! [Screenshot](Screenshot2.png)
+![Screenshot](Screenshot1.png)
+![Screenshot](Screenshot2.png)
+
+---
+
+# Loom Demo
+[![Watch the video](https://img.youtube.com/vi/S4mdoNEvyml/hqdefault.jpg)](https://youtu.be/S4mdoNEvymk)
 
 ---
 
